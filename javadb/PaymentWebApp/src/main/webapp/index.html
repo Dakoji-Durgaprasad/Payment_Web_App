@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Payments app by Dp</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: #a7ab83;
+	color: #fff;
+	display: block;
+	justify-content: center;
+	text-align: center;
+}
+
+.tabtitle{
+ 	color: white;
+    display: flex;
+    margin: 20px 40% 40px;
+ }
+ 
+.tablinks {
+	margin-right: 50px;
+	font-style: italic;
+	font-size: 18px;
+	font-weight: 900;
+	cursor: pointer;
+	position: relative;
+}
+
+.tabcontent {
+	display: none;
+}
+
+.tabcontent.active-content {
+	display: block;
+}
+
+.open-block {
+	margin-top: 18%;
+}
+.loginInputs input, .registerInputs input{
+	margin:20px;
+}
+input{
+	padding:10px;
+	width:50%;
+	border-style:inset;
+	border-radius:30px;
+}
+.subtn{
+	width:20%;
+}
+form{
+	margin:0 30%;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+	<h1>Welcome to the Payments</h1>
+	<div class="open-block">
+		<div class="tabtitle">
+			<div class="tablinks active" onclick="opentab('login')">
+				<h2>Login</h2>
+			</div>
+			<div class="tablinks" onclick="opentab('register')">
+				<h2>Register</h2>
+			</div>
+		</div>
+		<div class="tabcontent active-content" id="login">
+			<form>
+				<div class="loginInputs">
+					<input type="text" placeholder="User Name" name="username"><br>
+					<input type="password" placeholder="Password" name="pswd"><br>
+					<input type="submit" value="Login" class="subtn">
+				</div>
+			</form>
+		</div>
+
+		<div class="tabcontent" id="register">
+			<form>
+				<div class="registerInputs">
+					<input type="text" placeholder="User Name" name="username"><br>
+					<input type="text" placeholder="First Name" name="firstname"><br>
+					<input type="text" placeholder="Last Name" name="lastname"><br>
+					<input type="email" placeholder="Email-Id" name="email"> <br>
+					<input type="number" placeholder="Phone No" name="phno"> <br>
+					<input type="text" placeholder="Address" name="address"> <br>
+					<input type="password" placeholder="Password" name="pswd"> <br>
+					<input type="password" placeholder="Re-Enter-Password" name="re-pswd"><br>
+					<input type="submit" value="Register" class="subtn">
+				</div>
+			</form>
+		</div>
+		
+	</div>
+	<script>
+        var tablinks = document.getElementsByClassName("tablinks")
+        var tabcontents = document.getElementsByClassName("tabcontent")
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-content");
+            }
+            event.currentTarget.classList.add("active");
+            document.getElementById(tabname).classList.add("active-content")
+        }
+    </script>
+</body>
+</html>
