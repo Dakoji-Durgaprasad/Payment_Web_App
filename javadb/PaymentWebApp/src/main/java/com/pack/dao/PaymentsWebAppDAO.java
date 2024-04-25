@@ -9,7 +9,8 @@ import java.sql.Statement;
 
 public class PaymentsWebAppDAO {
 
-	public static void storeUserDetails(String urName, String fname, String lname, String email, String phno, String dob, String address, String pswd) throws SQLException{
+	public static void storeUserDetails(String userName, String fName, String lName, String email, String phNo,
+			String dob, String address, String pswd) throws SQLException {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -17,7 +18,8 @@ public class PaymentsWebAppDAO {
 					"root");
 			Statement st = con.createStatement();
 			String storeUserDetailsQuery = "insert into User_info(User_Name,First_Name,Last_Name,Email_Id,Phone_Number,Date_Of_Birth,Address,Password) "
-					+ "values('" + urName + "','" + fname + "','" + lname + "','" + email + "','" + phno + "','" + address + "','" + pswd + "')";
+					+ "values('" + userName + "','" + fName + "','" + lName + "','" + email + "','" + phNo + "','" + dob
+					+ "','" + address + "','" + pswd + "')";
 
 			int rs = st.executeUpdate(storeUserDetailsQuery);
 			System.out.println(rs + "row/s effected.\n");
@@ -26,7 +28,32 @@ public class PaymentsWebAppDAO {
 
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
+	public static boolean loginValidate(String userNameOrPhoneNo, String password ) throws SQLException{
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/payments_web_app", "root", "root");
+			String str="Durga_Smart_0012";
+
+			String loginValidateQuery = "SELECT * FROM User_info WHERE User_Name ='"+userNameOrPhoneNo+"' ";
+			Statement st = con.createStatement();
+		
+			ResultSet rs = st.executeQuery(loginValidateQuery);
+			while(rs.next()){
+				System.out.println("Login Successfull !!");
+			}
+			con.close();
+			return true;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
 }
