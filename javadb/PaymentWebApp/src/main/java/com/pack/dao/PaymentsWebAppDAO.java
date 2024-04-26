@@ -1,5 +1,6 @@
 package com.pack.dao;
 
+import java.sql.Date;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,7 +11,7 @@ import java.sql.Statement;
 public class PaymentsWebAppDAO {
 
 	public static void storeUserDetails(String userName, String fName, String lName, String email, String phNo,
-			String dob, String address, String pswd) throws SQLException {
+			Date dob, String address, String pswd) throws SQLException {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
