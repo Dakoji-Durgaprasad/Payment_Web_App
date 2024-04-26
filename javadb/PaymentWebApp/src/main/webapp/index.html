@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Welcome</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="title">
-        <h1>Welcome To The Payments Application</h1>
-    </div>
-    <div class="container">
-        
-        <div class="logform">
-            <div class="subtitle">
-                <h2>Login</h2>
-            </div>
-            <form action="" method="post">
-                <div class="loginInputs">
+	<div class="title">
+		<h1>Welcome To The Payments Application</h1>
+	</div>
+	<div class="container">
 
-                    <input type="text" name="username" id="urname" class="urname" placeholder="User Name...">
-                    <input type="password" name="password" id="pswd" class="pswd" placeholder="Enter Your Password...">
-                    <a href="http://localhost:8080/PaymentWebApp/dashboard.html">
-                    <input type="submit" value="LOGIN" class="subtn">
-                    </a>
-                    <p class="passage">If you are new!  <a href="register.html" class="a">Register here</a></p>
-                </div>
+		<div class="logform">
+			<div class="subtitle">
+				<h2>Login</h2>
+			</div>
+			<form action="http://localhost:8080/PaymentWebApp/LoginServlet"
+				method="post">
+				<div class="loginInputs">
 
-            </form>
-        </div>
-    </div>
+					<input type="text" name="username" id="username" class="urname"placeholder="User Name/Phone Number...." required> 
+					<input type="password" name="pswd" id="pswd" class="pswd" placeholder="Enter Your Password..." required>
 
+					<!--  <a href="http://localhost:8080/PaymentWebApp/dashboard.html"> -->
+					<input type="submit" value="LOGIN" class="subtn">
+					<!--   </a> -->
+
+					<p class="passage">
+						If you are new! ? <a href="register.html" class="a">Register
+							here</a>
+					</p>
+				</div>
+
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>
