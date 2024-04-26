@@ -17,21 +17,20 @@
 			<div class="subtitle">
 				<h2>REGISTRATION</h2>
 			</div>
-			<form action="" method="post">
+			<form action="http://localhost:8080/PaymentWebApp/RegisterServlet" method="post">
 				<div class="registerInputs">
 					<div class="row">
 						<div class="col">
-							<input type="text" placeholder="User Name..." name="username">
-							<input type="text" placeholder="First Name..." name="firstname">
-							<input type="text" placeholder="Last Name..." name="lastname">
-							<input type="email" placeholder="Email-Id..." name="email">
+							<input type="text" placeholder="User Name..." name="username" required>
+							<input type="text" placeholder="First Name..." name="firstname" required>
+							<input type="text" placeholder="Last Name..." name="lastname" required>
+							<input type="email" placeholder="Email-Id..." name="email" required>
 						</div>
 						<div class="col">
-							<input type="number" placeholder="Phone No..." name="phno">
-							<input type="text" placeholder="Address..." name="address">
-							<input type="password" placeholder="Password..." name="pswd">
-							<input type="password" placeholder="Re-Enter-Password..."
-								name="re-pswd">
+							<input type="text" placeholder="Phone No..." name="phno" required>
+							<input type="date" placeholder="Date Of Birth..." name="dob" required>
+							<input type="text" placeholder="Address..." name="address" required>
+							<input type="password" placeholder="Password..." name="pswd" required>
 						</div>
 					</div>
 					<input type="submit" value="Register" class="subtn">
